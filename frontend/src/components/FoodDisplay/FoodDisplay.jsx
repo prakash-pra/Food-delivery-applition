@@ -3,25 +3,27 @@ import "./FoodDisplay.css";
 import FoodItem from "../FoodItem/FoodItem";
 import { StoreContext } from "../../context/storeContext";
 
-function FoodDisplay() {
+function FoodDisplay({ category }) {
   const { food_list } = useContext(StoreContext);
-  console.log("food list..", food_list);
+  //   console.log("food list..", food_list);
 
   return (
-    <div className='food-list' id='food-list'>
+    <div className='food-display' id='food-list'>
       <h2>Top dishes near you</h2>
-      <div>
+      <div className='food-display-list-item'>
         {food_list.map((item, index) => {
-          return (
-            <FoodItem
-              key={index}
-              id={item.id}
-              name={item.name}
-              description={item.description}
-              image={item.image}
-              price={item.price}
-            />
-          );
+          if (category === "All" || category === item.category) {
+            return (
+              <FoodItem
+                key={index}
+                id={item._id}
+                name={item.name}
+                description={item.description}
+                image={item.image}
+                price={item.price}
+              />
+            );
+          }
         })}
       </div>
     </div>
