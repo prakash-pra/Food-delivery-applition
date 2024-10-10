@@ -9,9 +9,13 @@ function Footer() {
         <div className='footer-content-left'>
           <img src={assets.logo} alt='' />
           <p>
-            Etiam sit amet iaculis arcu. Fusce bibendum sagittis ligula vitae
-            viverra. Vivamus sed ante nec lorem iaculis elementum nec sit amet
-            neque.
+            Sed commodo placerat scelerisque. Maecenas nec augue non ante
+            fringilla fringilla fermentum ac nibh. In a placerat sapien, vitae
+            mollis lorem. Quisque tincidunt rhoncus sollicitudin. Maecenas
+            rhoncus risus scelerisque, viverra diam bibendum, aliquet ligula.
+            Nam sem augue, Etiam sit amet iaculis arcu. Fusce bibendum sagittis
+            ligula vitae viverra. Vivamus sed ante nec lorem iaculis elementum
+            nec sit amet neque.
           </p>
           <div className='footer-social-icons'>
             <img src={assets.facebook_icon} alt='' />
