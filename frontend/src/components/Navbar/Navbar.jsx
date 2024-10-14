@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-const Navbar = () => {
+import { Link } from "react-router-dom";
+
+const Navbar = ({ setShowLoginPopUp }) => {
   const [menu, setMenu] = useState("menu");
 
   return (
     <div className='navbar'>
-      <img src={assets.logo} alt='' className='logo' />
+      <Link to={"/"}>
+        <img src={assets.logo} alt='' className='logo' />
+      </Link>
 
       <ul className='navbar-menu'>
-        <li
+        <Link
+          to={"/"}
           onClick={() => {
             setMenu("home");
           }}
           className={menu === "home" ? "active" : ""}
         >
           Home
-        </li>
+        </Link>
         <li
           onClick={() => {
             setMenu("menu");
@@ -46,10 +51,12 @@ const Navbar = () => {
       <div className='navbar-right'>
         <img src={assets.search_icon} alt='' />
         <div>
-          <img src={assets.basket_icon} alt='' />
+          <Link to={"/cart"}>
+            <img src={assets.basket_icon} alt='' />
+          </Link>
           <div className='dot'></div>
         </div>
-        <button>Sign In</button>
+        <button onClick={() => setShowLoginPopUp(true)}>Sign In</button>
       </div>
     </div>
   );
