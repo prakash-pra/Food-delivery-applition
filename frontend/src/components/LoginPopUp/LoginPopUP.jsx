@@ -24,7 +24,7 @@ function LoginPopUP({ setShowLoginPopUp }) {
           <input type='email' placeholder='Your Email' required />
           <input type='password' placeholder='Password' required />
         </div>
-        <button>
+        <button className='loginpopup-btn'>
           {currentState === "Sign Up" ? "Create account" : "Login"}
         </button>
         <div className='login-popup-condition'>
