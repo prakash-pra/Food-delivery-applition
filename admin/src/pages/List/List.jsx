@@ -3,9 +3,7 @@ import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-function List() {
-  const url = "http://localhost:4000";
-
+function List({ url }) {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
@@ -19,10 +17,15 @@ function List() {
     }
   };
 
+  const removeFood = async (foodId) => {
+    const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
+
+    await fetchList();
+  };
+
   useEffect(() => {
     fetchList();
   }, []);
-  console.log("item list", list);
 
   return (
     <div className='list add flex-col'>
@@ -42,7 +45,9 @@ function List() {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{item.price}</p>
-              <p className='cursor'>x</p>
+              <p onClick={() => removeFood(item._id)} className='cursor'>
+                x
+              </p>
             </div>
           );
         })}
