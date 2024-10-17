@@ -30,14 +30,14 @@ function Add() {
           <div className='add-category flex-col'>
             <p>Product category</p>
             <select name='category'>
-              <option value='Salad'></option>
-              <option value='Rolls'></option>
-              <option value='Deserts'></option>
-              <option value='Sandwich'></option>
-              <option value='Cake'></option>
-              <option value='Pure Veg'></option>
-              <option value='Pasta'></option>
-              <option value='Noodles'></option>
+              <option value='Salad'>Salad</option>
+              <option value='Rolls'>Rolls</option>
+              <option value='Deserts'>Deserts</option>
+              <option value='Sandwich'>Sandwich</option>
+              <option value='Cake'>Cake</option>
+              <option value='Pure Veg'>Pure Veg</option>
+              <option value='Pasta'>Pasta</option>
+              <option value='Noodles'>Noodles</option>
             </select>
           </div>
           <div className='add-price flex-col'>
