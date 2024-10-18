@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import "./FoodDisplay.css";
 import FoodItem from "../FoodItem/FoodItem";
-import { StoreContext } from "../../context/storeContext";
+import { StoreContext } from "../../context/StoreContext";
 
 function FoodDisplay({ category }) {
-  const { food_list } = useContext(StoreContext);
-  //   console.log("food list..", food_list);
+  const { food_list, url } = useContext(StoreContext);
 
   return (
     <div className='food-display' id='food-list'>
@@ -19,7 +18,7 @@ function FoodDisplay({ category }) {
                 id={item._id}
                 name={item.name}
                 description={item.description}
-                image={item.image}
+                image={`${url}/images/` + item.image}
                 price={item.price}
               />
             );

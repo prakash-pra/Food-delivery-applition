@@ -5,7 +5,29 @@ import validator from "validator";
 
 // login user
 
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await userModel.findOne({ email });
+
+    if (!user) {
+      return res.json({ status: false, message: "User doesnot exist" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.json({ success: false, message: "invalid credentials" });
+    }
+
+    const token = createToken(user._id);
+
+    res.json({ success: true, token });
+  } catch (error) {
+    console.log(error);
+    res.json({ status: false, message: "Error" });
+  }
+};
 
 const createToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET);
@@ -15,6 +37,8 @@ const createToken = (id) => {
 
 const registerUser = async (req, res) => {
   const { name, password, email } = req.body;
+
+  //   console.log(req.body);
 
   try {
     //checking if user already exists
