@@ -3,7 +3,7 @@ import userModel from "../models/userModel.js";
 //add item to user cart
 
 const addToCart = async (req, res) => {
-  //   const { userId } = req.body;
+  // const { itemId, userId } = req.body;
 
   try {
     const user = await userModel.findOne({ _id: req.body.userId });
