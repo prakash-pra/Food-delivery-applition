@@ -5,6 +5,6 @@ import { placeOrder, verifyOrder } from "../controller/orderController.js";
 const orderRouter = express.Router();
 
 orderRouter.post("/place", middleware, placeOrder);
-orderRouter.post("/verify", middleware, verifyOrder);
+orderRouter.post("/verify", verifyOrder);
 
 export default orderRouter;
