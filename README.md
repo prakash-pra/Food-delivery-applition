@@ -16,3 +16,10 @@
 - Authentication: JSON Web Tokens (JWT)
 - Frontend: React.js
 
+## Contact
+For questions or suggestions, feel free to reach out:
+
+Email: prakash87902@gmail.com<br/>
+
+GitHub: prakash-pra
+
