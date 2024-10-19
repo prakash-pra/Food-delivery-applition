@@ -1,7 +1,6 @@
 ## Food Delivery App
 - A Node. js-based Food Delivery Application allows users to browse food, place orders, and manage deliveries in real time.
 
-<a href="https://google.com" target="_blank">Google<a/>
 
 ## Features
 - Browse Foods: check the available  foods.
